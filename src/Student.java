@@ -9,19 +9,23 @@ public class Student {
         this.sername = sername;
     }
 
-    public getName(){
+    public getName() {
         return this.name;
     }
-    public setName(String name){
+
+    public setName(String name) {
         this.name = name;
     }
-    public getId(long id){
+
+    public getId(long id) {
         this.id = id;
     }
-    public getSername(){
+
+    public getSername() {
         return this.sername;
     }
-    public setSername(String sername){
+
+    public setSername(String sername) {
         this.sername = sername;
     }
 }

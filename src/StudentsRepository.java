@@ -1,5 +1,7 @@
 public class StudentsRepository {
-    public StudentsRepository(){}
+    public StudentsRepository() {
+    }
+
     public void addStudent(ArrayList<Student> students, Student student) {
         students.add(student)
     }
