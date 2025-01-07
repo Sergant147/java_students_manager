@@ -1,61 +1,24 @@
 import java.util.ArrayList;
 
 public class StudentsCommandsHandler {
-    public ArrayList<Student> students = new ArrayList<Student>();
+    public ArrayList<Student> students;
+    private long lastId;
+    private StudentsRepository repository;
 
     public StudentsCommandsHandler() {
+        this.students = new ArrayList<Student>();
+        this.repository = new StudentsRepository();
     }
 
-    public void addStudent(String name, String sername) {
-        students.add(generateNewStudent(name, sername))
-    }
-
-    public void editStudent(long id, String name, String sername) {
-        for (Student student : students) {
-            if (student.getId() == id) {
-                student.setName(name);
-                student.setSername(sername);
-            }
-        }
-    }
-
-    public void deleteStudent(long id) {
-        for (Student student : students) {
-            if (student.getId() == id) {
-                students.remove(id);
-            }
-        }
-    }
-
-    public void clearStudents() {
-        students = new ArrayList<Student>();
-    }
-
-    public void showStudent(long id) {
-        for (Student student : students) {
-            if (student.getId() == id) {
-                System.out.println(student.getId() + ") " + student.getName() + ' ' + student.getSername());
-            }
-        }
-    }
-
-    public void showStudents() {
-        for (Student student : students) {
-            showStudent(student.id);
-        }
-    }
-
+    public void clearStudents() {students = new ArrayList<Student>();}
+    public void addStudent(String name, String sername){repository.addStudent(this.students, generateNewStudent(name, sername));}
+    public void deleteStudent(long id){repository.deleteStudent(this.students, id);}
+    public void editStudent(long id, String name, String sername){repository.editStudent(id, name, sername, this.students)}
+    public void showStudent(long id){repository.showStudent(id, this.students);}
+    public void showStudents(){repository.showStudents(this.students);}
+    private void generateNewStudent(String name, String sername) {return new Student(generateNewId(), name, sername);}
     private void generateNewId() {
-        long maxId = 0;
-        for (Student student : students) {
-            if (student.id > maxId) {
-                maxId = student.id;
-            }
-        }
-        return maxId + 1;
-    }
-
-    private void generateNewStudent(String name, String sername) {
-        return new Student(generateNewId(), name, sername);
+        this.lastId += 1;
+        return lastId - 1;
     }
 }
