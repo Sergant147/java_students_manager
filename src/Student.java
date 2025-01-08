@@ -17,7 +17,7 @@ public class Student {
         this.name = name;
     }
 
-    public getId(long id) {
+    public setId(long id) {
         this.id = id;
     }
 
