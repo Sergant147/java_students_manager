@@ -39,7 +39,7 @@ public class StudentsCommandsHandler {
                 this.repository.add(new Student(-1, name, sername));
             } else if (command.equals("edit")) {
                 System.out.print("Id: ");
-                id = scanner.nextLong();
+                id = Long.parseLong(scanner.nextLine());
                 System.out.print("Name: ");
                 name = scanner.nextLine();
                 System.out.print("Sername: ");
