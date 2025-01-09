@@ -3,7 +3,11 @@ import java.util.ArrayList;
 
 public class StudentsCommandsHandler {
     private StudentsRepository repository;
-    public StudentsCommandsHandler() {this.repository = new StudentsRepository();}
+
+    public StudentsCommandsHandler() {
+        this.repository = new StudentsRepository();
+    }
+
     public void run() {
         Scanner scanner = new Scanner(System.in);
         String command;
@@ -19,7 +23,7 @@ public class StudentsCommandsHandler {
             } else if (command.equals("clear")) {
                 this.repository.clear();
             } else if (command.equals("get_all")) {
-                for (Student student: this.repository.findAll()){
+                for (Student student : this.repository.findAll()) {
                     System.out.println(student.getName() + ' ' + student.getSername());
                 }
             } else if (command.equals("get")) {
