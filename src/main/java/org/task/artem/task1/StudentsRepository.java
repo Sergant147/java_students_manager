@@ -1,7 +1,8 @@
 package org.task.artem.task1;
 
 import java.util.ArrayList;
-import java.util.Optional;
+import java.util.NoSuchElementException;
+
 
 public class StudentsRepository implements IStudentsRepository {
     private ArrayList<Student> students;
@@ -32,14 +33,15 @@ public class StudentsRepository implements IStudentsRepository {
         }
     }
 
-    public Student find(long id) {
+    public Student find(long id) throws NoSuchElementException {
         for (Student student : this.students) {
             if (student.getId() == id) {
                 return student;
             }
         }
-        return new Student(-1, "Student Not Found", "");
+        throw new NoSuchElementException("Student with ID " + id + " not found.");
     }
+
 
     public void delete(long id) {
         for (Student student : this.students) {
