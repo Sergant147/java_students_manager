@@ -32,13 +32,13 @@ public class StudentsRepository implements IStudentsRepository {
         }
     }
 
-    public Optional<Student> find(long id) {
+    public Student find(long id) {
         for (Student student : this.students) {
             if (student.getId() == id) {
-                return Optional.of(student);
+                return student;
             }
         }
-        return Optional.empty();
+        return new Student(-1, "unknown", "");
     }
 
     public void delete(long id) {
