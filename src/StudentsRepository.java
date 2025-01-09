@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-public class StudentsRepository {
+public class StudentsRepository implements StudentsRepositoryInterface {
     private ArrayList<Student> students;
     private long id;
     public StudentsRepository() {students = new ArrayList<Student>();}
-    public void makeNewId() {return this.id++;}
+    private void makeNewId() {return this.id++;}
     public void clear() {this.students = new ArrayList<Student>();}
     public void findAll () {return students;}
     public void edit (long id, Student student) {
