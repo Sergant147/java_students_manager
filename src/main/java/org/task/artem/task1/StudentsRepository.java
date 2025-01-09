@@ -1,6 +1,7 @@
 package org.task.artem.task1;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class StudentsRepository implements IStudentsRepository {
     private ArrayList<Student> students;
@@ -31,13 +32,13 @@ public class StudentsRepository implements IStudentsRepository {
         }
     }
 
-    public Student find(long id) {
+    public Optional<Student> find(long id) {
         for (Student student : this.students) {
             if (student.getId() == id) {
-                return student;
+                return Optional.of(student);
             }
         }
-        return this.students.get(0);
+        return Optional.empty();
     }
 
     public void delete(long id) {
