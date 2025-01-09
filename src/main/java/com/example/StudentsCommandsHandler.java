@@ -1,5 +1,6 @@
+package com.example;
+
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class StudentsCommandsHandler {
     private StudentsRepository repository;
@@ -14,7 +15,7 @@ public class StudentsCommandsHandler {
         String name;
         String sername;
         long id;
-        Student student;
+        Student studentMaking;
         while (true) {
             System.out.print("Command (edit, add, remove, get, get_all, clear, stop): ");
             command = scanner.nextLine();
@@ -29,8 +30,8 @@ public class StudentsCommandsHandler {
             } else if (command.equals("get")) {
                 System.out.print("Id: ");
                 id = scanner.nextLong();
-                student = this.repository.find(id);
-                System.out.println(student.getName() + ' ' + student.getSername());
+                studentMaking = this.repository.find(id);
+                System.out.println(studentMaking.getName() + ' ' + studentMaking.getSername());
             } else if (command.equals("remove")) {
                 System.out.print("Id: ");
                 id = scanner.nextLong();

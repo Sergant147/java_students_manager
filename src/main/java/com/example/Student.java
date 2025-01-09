@@ -1,3 +1,5 @@
+package com.example;
+
 public class Student {
     private long id;
     private String name;
@@ -9,23 +11,25 @@ public class Student {
         this.sername = sername;
     }
 
-    public getName() {
+    public String getName() {
         return this.name;
     }
 
-    public setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public setId(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public getSername() {
+    public String getSername() {
         return this.sername;
     }
 
-    public setSername(String sername) {
+    public void setSername(String sername) {
         this.sername = sername;
     }
+
+    public long getId() {return this.id;}
 }

@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.ArrayList;
 
 public class StudentsRepository implements IStudentsRepository {
@@ -8,7 +10,7 @@ public class StudentsRepository implements IStudentsRepository {
         students = new ArrayList<Student>();
     }
 
-    private void makeNewId() {
+    private long makeNewId() {
         return this.id++;
     }
 
@@ -16,30 +18,31 @@ public class StudentsRepository implements IStudentsRepository {
         this.students = new ArrayList<Student>();
     }
 
-    public void findAll() {
+    public ArrayList<Student> findAll() {
         return students;
     }
 
     public void edit(long id, Student student) {
         for (Student studentFound : this.students) {
-            if (studentFound.id == id) {
+            if (studentFound.getId() == id) {
                 studentFound.setName(student.getName());
                 studentFound.setSername(student.getSername());
             }
         }
     }
 
-    public Optional<Student> find(long id) {
+    public Student find(long id) {
         for (Student student : this.students) {
-            if (student.id == id) {
+            if (student.getId() == id) {
                 return student;
             }
         }
+        return this.students.get(0);
     }
 
-    public boolean delete(long id) {
+    public void delete(long id) {
         for (Student student : this.students) {
-            if (student.id == id) {
+            if (student.getId() == id) {
                 this.students.remove(student);
             }
         }
