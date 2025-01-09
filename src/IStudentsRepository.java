@@ -1,13 +1,13 @@
 public interface StudentsRepositoryInterface {
     Student add(Student student);
 
-    Student edit(id long, Student student);
+    Student edit(long id, Student student);
 
     List<Student> findAll();
 
-    Optional<Student> find(id long);
+    Optional<Student> find(long id);
 
-    Student get(id long);
+    Student get(long id);
 
-    boolean delete(id long);
+    boolean delete(long id);
 }
