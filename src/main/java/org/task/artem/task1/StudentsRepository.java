@@ -38,7 +38,7 @@ public class StudentsRepository implements IStudentsRepository {
                 return student;
             }
         }
-        return new Student(-1, "unknown", "");
+        return new Student(-1, "Student Not Found", "");
     }
 
     public void delete(long id) {
