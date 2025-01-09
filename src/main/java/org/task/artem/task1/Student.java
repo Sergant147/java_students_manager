@@ -1,4 +1,4 @@
-package com.example;
+package org.task.artem.task1;
 
 public class Student {
     private long id;

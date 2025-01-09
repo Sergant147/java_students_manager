@@ -1,4 +1,4 @@
-package com.example;
+package org.task.artem.task1;
 
 public class Main {
     public static void main(String[] args) {
