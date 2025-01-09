@@ -10,6 +10,4 @@ public interface StudentsRepositoryInterface {
     Student get(id long);
 
     boolean delete(id long);
-
-    long makeNewId();
 }

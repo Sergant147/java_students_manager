@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class StudentsRepository implements StudentsRepositoryInterface {
+public class StudentsRepository implements IStudentsRepository {
     private ArrayList<Student> students;
     private long id;
 
