@@ -25,30 +25,18 @@ public class StudentsRepository implements IStudentsRepository {
     }
 
     public void edit(long id, Student student) {
-        for (Student studentFound : this.students) {
-            if (studentFound.getId() == id) {
-                studentFound.setName(student.getName());
-                studentFound.setSername(student.getSername());
-            }
-        }
+        int index = this.students.indexOf(students.stream().filter(part -> part.getId() == id).findFirst());
+        this.students.set(index, student);
     }
 
     public Student find(long id) throws NoSuchElementException {
-        for (Student student : this.students) {
-            if (student.getId() == id) {
-                return student;
-            }
-        }
-        throw new NoSuchElementException("Student with ID " + id + " not found.");
+        return this.students.stream().filter(part -> part.getId() == id).findFirst().orElseThrow();
     }
 
 
     public void delete(long id) {
-        for (Student student : this.students) {
-            if (student.getId() == id) {
-                this.students.remove(student);
-            }
-        }
+        int index = this.students.indexOf(students.stream().filter(part -> part.getId() == id).findFirst());
+        this.students.removeIf(part -> part.getId() == id);
     }
 
     public void add(Student student) {

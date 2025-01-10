@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StudentsCommandsHandler {
     private StudentsRepository repository;
-    Scanner scanner;
+    private Scanner scanner;
 
     public StudentsCommandsHandler() {
         this.scanner = new Scanner(System.in);
