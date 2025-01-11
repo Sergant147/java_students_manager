@@ -4,6 +4,7 @@ import com.serugle.sergey.studentmanager.model.Student;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 public class StudentsRepository implements IStudentsRepository {
@@ -50,5 +51,14 @@ public class StudentsRepository implements IStudentsRepository {
     public void add(Student student) {
         student.setId(this.makeNewId());
         this.students.add(student);
+    }
+
+    public Optional<Student> getById(long id){
+        return Optional.of(this
+                .students
+                .stream()
+                .filter(part -> part.getId() == id)
+                .findFirst()
+                .orElseThrow());
     }
 }
