@@ -3,6 +3,7 @@ package com.serugle.sergey.studentmanager;
 import com.serugle.sergey.studentmanager.model.Student;
 import com.serugle.sergey.studentmanager.repository.StudentsRepository;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class StudentsCommandsHandler {
@@ -55,11 +56,18 @@ public class StudentsCommandsHandler {
         this.repository.edit(id, new Student(id, name, sername));
     }
 
+    public void kindGet() {
+        System.out.print("Id: ");
+        long id = scanner.nextLong();
+        Optional<Student> studentMaking = this.repository.getById(id);
+        System.out.println(studentMaking.getName() + ' ' + studentMaking.getSername());
+    }
+
     public void run() {
         String command;
         label:
         while (true) {
-            System.out.print("Command (edit, add, remove, get, get_all, clear, stop): ");
+            System.out.print("Command (edit, add, remove, get, get_all, clear, stop, kind_get): ");
             command = scanner.nextLine();
             switch (command) {
                 case "stop":
@@ -76,6 +84,8 @@ public class StudentsCommandsHandler {
                     add();
                 case "edit":
                     edit();
+                case "kind_get":
+                    kindGet();
             }
         }
         scanner.close();
