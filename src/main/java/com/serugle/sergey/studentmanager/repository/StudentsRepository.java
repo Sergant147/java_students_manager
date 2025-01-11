@@ -54,8 +54,7 @@ public class StudentsRepository implements IStudentsRepository {
     }
 
     public Optional<Student> getById(long id){
-        return this
-                .students
+        return this.students
                 .stream()
                 .filter(part -> part.getId() == id)
                 .findFirst();
