@@ -1,4 +1,4 @@
-package com.serugal.sergey.studentmanager;
+package com.serugle.sergey.studentmanager;
 
 public class Student {
     private long id;

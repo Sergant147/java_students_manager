@@ -1,4 +1,4 @@
-package com.serugal.sergey.studentmanager;
+package com.serugle.sergey.studentmanager;
 
 public class Main {
     public static void main(String[] args) {

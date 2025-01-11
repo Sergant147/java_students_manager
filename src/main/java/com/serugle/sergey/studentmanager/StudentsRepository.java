@@ -1,4 +1,4 @@
-package com.serugal.sergey.studentmanager;
+package com.serugle.sergey.studentmanager;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
