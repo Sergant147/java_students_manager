@@ -1,3 +1,5 @@
+package com.serugle.sergey.studentmanager;
+
 import com.serugle.sergey.studentmanager.model.Student;
 import com.serugle.sergey.studentmanager.repository.StudentsRepository;
 
