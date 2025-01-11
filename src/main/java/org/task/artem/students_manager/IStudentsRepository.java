@@ -1,4 +1,4 @@
-package org.task.artem.task1;
+package org.task.artem.students_manager;
 import java.util.ArrayList;
 
 public interface IStudentsRepository {

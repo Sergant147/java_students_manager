@@ -1,4 +1,4 @@
-package org.task.artem.task1;
+package org.task.artem.students_manager;
 
 public class Student {
     private long id;
