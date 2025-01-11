@@ -35,7 +35,7 @@ public class StudentsRepository implements IStudentsRepository {
         this.students.set(index, student);
     }
 
-    public Student find(long id) throws NoSuchElementException {
+    public Student find(long id) {
         return this.students.stream()
                 .filter(part -> part.getId() == id)
                 .findFirst()
