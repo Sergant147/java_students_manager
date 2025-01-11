@@ -59,7 +59,7 @@ public class StudentsCommandsHandler {
     public void kindGet() {
         System.out.print("Id: ");
         long id = scanner.nextLong();
-        Optional<Student> studentMaking = this.repository.getById(id);
+        Student studentMaking = this.repository.getById(id).get();
         System.out.println(studentMaking.getName() + ' ' + studentMaking.getSername());
     }
 
