@@ -30,7 +30,8 @@ public class StudentsRepository implements IStudentsRepository {
         int index = this.students.indexOf(students.stream()
                 .filter(part -> part.getId() == id)
                 .findFirst()
-                .orElseThrow());
+                .orElseThrow()
+        );
         this.students.set(index, student);
     }
 
@@ -46,7 +47,8 @@ public class StudentsRepository implements IStudentsRepository {
         int index = this.students.indexOf(students.stream()
                 .filter(part -> part.getId() == id)
                 .findFirst()
-                .orElseThrow());
+                .orElseThrow()
+        );
         this.students.removeIf(part -> part.getId() == id);
     }
 
