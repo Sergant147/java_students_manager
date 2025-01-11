@@ -27,17 +27,17 @@ public class StudentsRepository implements IStudentsRepository {
     }
 
     public void edit(long id, Student student) {
-        int index = this.students.indexOf(students.stream().
-                filter(part -> part.getId() == id).
-                findFirst()
+        int index = this.students.indexOf(students.stream()
+                .filter(part -> part.getId() == id)
+                .findFirst()
                 .orElseThrow());
         this.students.set(index, student);
     }
 
     public Student find(long id) throws NoSuchElementException {
-        return this.students.stream().
-                filter(part -> part.getId() == id).
-                findFirst()
+        return this.students.stream()
+                .filter(part -> part.getId() == id)
+                .findFirst()
                 .orElseThrow();
     }
 
