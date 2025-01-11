@@ -1,6 +1,6 @@
 package com.serugle.sergey.studentmanager;
 
-import com.serugle.sergey.studentmanager.repository.StudentsCommandsHandler;
+import StudentsCommandsHandler;
 
 public class Main {
     public static void main(String[] args) {
