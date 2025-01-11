@@ -1,5 +1,7 @@
 package com.serugle.sergey.studentmanager;
 
+import com.serugle.sergey.studentmanager.repository.StudentsCommandsHandler;
+
 public class Main {
     public static void main(String[] args) {
         StudentsCommandsHandler handler = new StudentsCommandsHandler();

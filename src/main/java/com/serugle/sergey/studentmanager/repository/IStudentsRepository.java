@@ -1,4 +1,6 @@
-package com.serugle.sergey.studentmanager;
+package com.serugle.sergey.studentmanager.repository;
+import com.serugle.sergey.studentmanager.model.Student;
+
 import java.util.ArrayList;
 
 public interface IStudentsRepository {

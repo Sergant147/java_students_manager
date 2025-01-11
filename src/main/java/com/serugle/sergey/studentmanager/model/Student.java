@@ -1,4 +1,4 @@
-package com.serugle.sergey.studentmanager;
+package com.serugle.sergey.studentmanager.model;
 
 public class Student {
     private long id;

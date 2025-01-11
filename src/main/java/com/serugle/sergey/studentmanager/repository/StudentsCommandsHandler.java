@@ -1,7 +1,6 @@
-package com.serugle.sergey.studentmanager;
-
+package com.serugle.sergey.studentmanager.repository;
+import com.serugle.sergey.studentmanager.model.Student;
 import java.util.Scanner;
-
 public class StudentsCommandsHandler {
     private StudentsRepository repository;
     private Scanner scanner;
