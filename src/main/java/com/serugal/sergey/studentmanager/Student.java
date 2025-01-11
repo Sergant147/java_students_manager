@@ -1,4 +1,4 @@
-package org.task.artem.students_manager;
+package com.serugal.sergey.studentmanager;
 
 public class Student {
     private long id;

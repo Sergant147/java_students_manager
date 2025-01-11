@@ -1,4 +1,4 @@
-package org.task.artem.students_manager;
+package com.serugal.sergey.studentmanager;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
